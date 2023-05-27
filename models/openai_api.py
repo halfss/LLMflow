@@ -48,7 +48,6 @@ class openai_api():
 
         real_prompt = prompt.format_prompt(**real_input_argvs)
 
-
         #全部响应值
         responses = ''
 
@@ -63,29 +62,36 @@ class openai_api():
 
 
         host = "http://localhost:8000"
-        data = {
-              "model": "vicuna-7b-v1.1",
-              "prompt": real_prompt.to_string(),
-              "max_tokens":512,
-              "temperature": 0.1,
-              "stream": streaming
-            }
 
-        llm_r = requests.post('%s/v1/completions' % host, json=data, stream=streaming)
+        real_prompt_str = real_prompt.to_string()
+
+        max_input = 1536
+
+        for str_i in range(0, len(real_prompt_str)+1, max_input):
+            _real_prompt_str = real_prompt_str[str_i:str_i+max_input]
+
+            data = {
+                  "model": "vicuna-7b-v1.1",
+                  "prompt": _real_prompt_str,
+                  "max_tokens":512,
+                  "temperature": 0.1,
+                  "stream": streaming
+                }
 
 
-        over = False
-        for line in llm_r.iter_lines(decode_unicode=True):
-            if "data: " in line:
-                resp = json.loads(line[6:])
-                response = resp['choices'][0]['text']
-                over = resp['choices'][0]['finish_reason']
+            llm_r = requests.post('%s/v1/completions' % host, json=data, stream=streaming)
+            over = False
+            for line in llm_r.iter_lines(decode_unicode=True):
+                if "data: " in line:
+                    resp = json.loads(line[6:])
+                    response = resp['choices'][0]['text']
+                    over = resp['choices'][0]['finish_reason']
 
-                responses += response
-                sendsse_sse_message(response)
+                    responses += response
+                    sendsse_sse_message(response)
 
-            if over:
-                break
+                if over:
+                    break
 
         message = ChatMessage(
             question='',
