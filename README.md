@@ -6,6 +6,14 @@
 
 --------
 
+## 🚩 平台演示
+
+![演示](https://raw.githubusercontent.com/halfss/LLMflow/master/img/demo.gif)
+
+
+
+[完整视频](https://www.bilibili.com/video/BV1To4y1g7gT/?vd_source=45d3792231c93bfb34ab403e73360ac2)
+
 ## 🚩 1：项目背景：
 
 ##### 💡应用思路
@@ -69,7 +77,7 @@
 - [ ] mysql
 - [ ] oracle
 
-##### 💡 与平台交互
+##### 💡与平台交互
 
 - [ ] 调用API
 
@@ -97,19 +105,34 @@
 - [ ] RSS总结：
   * 从特定地址获取内容，并进行总结，发送
 
-##### 💡AI知识库*
+##### 💡AI知识库
 
-##### *🎉 有比较有意思的、典型的场景需求，可以一起交流、探讨**
+##### **🎉 有比较有意思的、典型的场景需求，可以一起交流、探讨**
 
+---
 
+### 支持模型列表
 
+Fastchat目前支持的模型，具体见 [连接](https://github.com/lm-sys/FastChat)
 
+- Vicuna, Alpaca, LLaMA, Koala
+- [lmsys/fastchat-t5-3b-v1.0](https://huggingface.co/lmsys/fastchat-t5)
+- [BlinkDL/RWKV-4-Raven](https://huggingface.co/BlinkDL/rwkv-4-raven)
+- [databricks/dolly-v2-12b](https://huggingface.co/databricks/dolly-v2-12b)
+- [FreedomIntelligence/phoenix-inst-chat-7b](https://huggingface.co/FreedomIntelligence/phoenix-inst-chat-7b)
+- [h2oai/h2ogpt-gm-oasst1-en-2048-open-llama-7b-preview-300bt-v2](https://huggingface.co/h2oai/h2ogpt-gm-oasst1-en-2048-open-llama-7b-preview-300bt-v2)
+- [mosaicml/mpt-7b-chat](https://huggingface.co/mosaicml/mpt-7b-chat)
+- [OpenAssistant/oasst-sft-1-pythia-12b](https://huggingface.co/OpenAssistant/oasst-sft-1-pythia-12b)
+- [project-baize/baize-lora-7B](https://huggingface.co/project-baize/baize-lora-7B)
+- [StabilityAI/stablelm-tuned-alpha-7b](https://huggingface.co/stabilityai/stablelm-tuned-alpha-7b)
+- [THUDM/chatglm-6b](https://huggingface.co/THUDM/chatglm-6b)
+- [Neutralzz/BiLLa-7B-SFT](https://huggingface.co/Neutralzz/BiLLa-7B-SFT)
 
 ---
 
 ## 🎉友情链接🎉
 
-本项目在开发过程中，部分代码来源于 [imClumsyPanda](https://github.com/GanymedeNil) 的项目 [langchain-ChatGLM](https://github.com/imClumsyPanda/langchain-ChatGLM)
+本项目在开发过程中，基础代码来源于 [imClumsyPanda](https://github.com/GanymedeNil) 的项目 [langchain-ChatGLM](https://github.com/imClumsyPanda/langchain-ChatGLM)
 
 -------
 
